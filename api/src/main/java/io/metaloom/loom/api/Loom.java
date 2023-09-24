@@ -49,4 +49,6 @@ public interface Loom {
 		return LoomVersion.getPlainVersion();
 	}
 
+	Integer actualRestPort();
+
 }
