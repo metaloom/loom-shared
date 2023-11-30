@@ -18,6 +18,9 @@ import io.metaloom.loom.rest.model.tag.TagReference;
 import io.metaloom.loom.rest.model.task.TaskResponse;
 import io.metaloom.loom.rest.model.user.UserReference;
 import io.metaloom.utils.UUIDUtils;
+import io.metaloom.utils.hash.MD5;
+import io.metaloom.utils.hash.SHA256;
+import io.metaloom.utils.hash.SHA512;
 import io.vertx.core.json.JsonObject;
 
 public interface ExampleValues {
@@ -87,16 +90,16 @@ public interface ExampleValues {
 		return meta;
 	}
 
-	default String sha512sum() {
-		return "0e3e75234abc68f4378a86b3f4b32a198ba301845b0cd6e50106e874345700cc6663a86c1ea125dc5e92be17c98f9a0f85ca9d5f595db2012f7cc3571945c123";
+	default SHA512 sha512sum() {
+		return SHA512.fromString(
+			"0e3e75234abc68f4378a86b3f4b32a198ba301845b0cd6e50106e874345700cc6663a86c1ea125dc5e92be17c98f9a0f85ca9d5f595db2012f7cc3571945c123");
 	}
 
 	default HashInfo assetHashes() {
 		HashInfo hashes = new HashInfo();
-		hashes.setSha512(
-			sha512sum());
-		hashes.setSha256("f2ca1bb6c7e907d06dafe4687e579fce76b37e4e93b7605022da52e6ccc26fd2");
-		hashes.setMD5("d8e8fca2dc0f896fd7cb4cb0031ba249");
+		hashes.setSha512(sha512sum());
+		hashes.setSha256(SHA256.fromString("f2ca1bb6c7e907d06dafe4687e579fce76b37e4e93b7605022da52e6ccc26fd2"));
+		hashes.setMD5(MD5.fromString("d8e8fca2dc0f896fd7cb4cb0031ba249"));
 		return hashes;
 	}
 

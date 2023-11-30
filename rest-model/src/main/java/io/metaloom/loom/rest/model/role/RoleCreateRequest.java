@@ -5,7 +5,6 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
-import io.metaloom.loom.rest.model.RestModel;
 import io.metaloom.loom.rest.model.RestRequestModel;
 import io.vertx.core.json.JsonObject;
 

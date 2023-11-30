@@ -1,7 +1,5 @@
 package io.metaloom.loom.rest.model.asset.info;
 
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-
 import io.metaloom.loom.rest.model.RestModel;
 
 public class AudioInfo implements RestModel {

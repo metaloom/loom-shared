@@ -3,45 +3,61 @@ package io.metaloom.loom.rest.model.asset.info;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import io.metaloom.loom.rest.model.RestModel;
+import io.metaloom.utils.hash.ChunkHash;
+import io.metaloom.utils.hash.MD5;
+import io.metaloom.utils.hash.SHA256;
+import io.metaloom.utils.hash.SHA512;
 
 public class HashInfo implements RestModel {
 
 	@JsonPropertyDescription("SHA512 checksum of the asset.")
-	private String sha512;
+	private SHA512 sha512;
 
 	@JsonPropertyDescription("SHA256 checksum of the asset.")
-	private String sha256;
+	private SHA256 sha256;
 
 	@JsonPropertyDescription("MD5 checksum of the asset.")
-	private String md5;
+	private MD5 md5;
+
+	@JsonPropertyDescription("Chunk hash checksum of the asset.")
+	private ChunkHash chunkHash;
 
 	public HashInfo() {
 	}
 
-	public String getSha512() {
+	public SHA512 getSha512() {
 		return sha512;
 	}
 
-	public HashInfo setSha512(String sha512) {
+	public HashInfo setSha512(SHA512 sha512) {
 		this.sha512 = sha512;
 		return this;
 	}
 
-	public String getSha256() {
+	public SHA256 getSha256() {
 		return sha256;
 	}
 
-	public HashInfo setSha256(String sha256) {
+	public HashInfo setSha256(SHA256 sha256) {
 		this.sha256 = sha256;
 		return this;
 	}
 
-	public String getMD5() {
+	public MD5 getMD5() {
 		return md5;
 	}
 
-	public HashInfo setMD5(String md5) {
+	public HashInfo setMD5(MD5 md5) {
 		this.md5 = md5;
+		return this;
+	}
+
+	public ChunkHash getChunkHash() {
+		return chunkHash;
+	}
+
+	public HashInfo setChunkHash(ChunkHash chunkHash) {
+		this.chunkHash = chunkHash;
 		return this;
 	}
 

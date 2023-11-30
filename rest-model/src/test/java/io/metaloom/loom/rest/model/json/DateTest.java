@@ -5,7 +5,7 @@ import java.time.Instant;
 import org.junit.jupiter.api.Test;
 
 import io.metaloom.loom.rest.json.Json;
-import io.metaloom.loom.test.TestValues;
+import io.metaloom.loom.test.data.TestValues;
 
 public class DateTest implements TestValues {
 

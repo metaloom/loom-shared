@@ -3,20 +3,20 @@ package io.metaloom.loom.api.asset.impl;
 import java.util.UUID;
 
 import io.metaloom.loom.api.asset.AssetId;
-import io.metaloom.utils.hash.SHA512Sum;
+import io.metaloom.utils.hash.SHA512;
 
 public class AssetIdImpl implements AssetId {
 
 	private final UUID uuid;
 
-	private final SHA512Sum hash;
+	private final SHA512  hash;
 
 	public AssetIdImpl(UUID uuid) {
 		this.uuid = uuid;
 		this.hash = null;
 	}
 
-	public AssetIdImpl(SHA512Sum hash) {
+	public AssetIdImpl(SHA512 hash) {
 		this.hash = hash;
 		this.uuid = null;
 	}
@@ -27,7 +27,7 @@ public class AssetIdImpl implements AssetId {
 	}
 
 	@Override
-	public SHA512Sum hashsum() {
+	public SHA512 hashsum() {
 		return hash;
 	}
 

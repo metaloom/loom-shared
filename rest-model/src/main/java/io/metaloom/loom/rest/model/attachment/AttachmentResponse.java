@@ -1,11 +1,12 @@
 package io.metaloom.loom.rest.model.attachment;
 
 import io.metaloom.loom.rest.model.common.AbstractCreatorEditorRestResponse;
+import io.metaloom.utils.hash.SHA512;
 
 public class AttachmentResponse extends AbstractCreatorEditorRestResponse<AttachmentResponse>
 	implements AttachmentModel<AttachmentResponse> {
 
-	private String sha512sum;
+	private SHA512 sha512sum;
 
 	private String filename;
 
@@ -13,11 +14,11 @@ public class AttachmentResponse extends AbstractCreatorEditorRestResponse<Attach
 
 	private long size;
 
-	public String getSha512sum() {
+	public SHA512 getSha512sum() {
 		return sha512sum;
 	}
 
-	public AttachmentResponse setSha512sum(String sha512sum) {
+	public AttachmentResponse setSha512sum(SHA512 sha512sum) {
 		this.sha512sum = sha512sum;
 		return this;
 	}
