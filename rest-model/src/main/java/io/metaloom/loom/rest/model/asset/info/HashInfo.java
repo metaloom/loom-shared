@@ -25,20 +25,20 @@ public class HashInfo implements RestModel {
 	public HashInfo() {
 	}
 
-	public SHA512 getSha512() {
+	public SHA512 getSHA512() {
 		return sha512;
 	}
 
-	public HashInfo setSha512(SHA512 sha512) {
+	public HashInfo setSHA512(SHA512 sha512) {
 		this.sha512 = sha512;
 		return this;
 	}
 
-	public SHA256 getSha256() {
+	public SHA256 getSHA256() {
 		return sha256;
 	}
 
-	public HashInfo setSha256(SHA256 sha256) {
+	public HashInfo setSHA256(SHA256 sha256) {
 		this.sha256 = sha256;
 		return this;
 	}

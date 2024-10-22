@@ -13,6 +13,7 @@ import io.metaloom.loom.rest.model.asset.info.AudioInfo;
 import io.metaloom.loom.rest.model.asset.info.ConsistencyInfo;
 import io.metaloom.loom.rest.model.asset.info.DocumentInfo;
 import io.metaloom.loom.rest.model.asset.info.FileInfo;
+import io.metaloom.loom.rest.model.asset.info.FingerprintInfo;
 import io.metaloom.loom.rest.model.asset.info.GeoLocationInfo;
 import io.metaloom.loom.rest.model.asset.info.HashInfo;
 import io.metaloom.loom.rest.model.asset.info.ImageInfo;
@@ -50,6 +51,9 @@ public class AssetCreateRequest implements RestRequestModel, AssetModel<AssetCre
 
 	@JsonPropertyDescription("A set of different computed hashes for the asset.")
 	private HashInfo hashes;
+
+	@JsonPropertyDescription("Information about fingerprint of the asset")
+	private FingerprintInfo fingerprint;
 
 	@JsonPropertyDescription("Information about common media properties (e.g. duration, dimension)")
 	private MediaInfo media;
@@ -132,6 +136,17 @@ public class AssetCreateRequest implements RestRequestModel, AssetModel<AssetCre
 	public AssetCreateRequest setHashes(HashInfo hashes) {
 		this.hashes = hashes;
 		return this;
+	}
+
+	@Override
+	public AssetCreateRequest setFingerprint(FingerprintInfo fingerprint) {
+		this.fingerprint = fingerprint;
+		return this;
+	}
+
+	@Override
+	public FingerprintInfo getFingerprint() {
+		return fingerprint;
 	}
 
 	@Override

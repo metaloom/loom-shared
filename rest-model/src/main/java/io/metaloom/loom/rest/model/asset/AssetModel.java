@@ -8,6 +8,7 @@ import io.metaloom.loom.rest.model.asset.info.AudioInfo;
 import io.metaloom.loom.rest.model.asset.info.ConsistencyInfo;
 import io.metaloom.loom.rest.model.asset.info.DocumentInfo;
 import io.metaloom.loom.rest.model.asset.info.FileInfo;
+import io.metaloom.loom.rest.model.asset.info.FingerprintInfo;
 import io.metaloom.loom.rest.model.asset.info.GeoLocationInfo;
 import io.metaloom.loom.rest.model.asset.info.HashInfo;
 import io.metaloom.loom.rest.model.asset.info.ImageInfo;
@@ -41,6 +42,10 @@ public interface AssetModel<T extends AssetModel<T>> extends MetaModel<T> {
 
 	T setHashes(HashInfo hashes);
 
+	FingerprintInfo getFingerprint();
+
+	T setFingerprint(FingerprintInfo fingerprint);
+
 	FileInfo getFile();
 
 	T setFile(FileInfo file);
@@ -62,7 +67,7 @@ public interface AssetModel<T extends AssetModel<T>> extends MetaModel<T> {
 		if (getHashes() == null) {
 			setHashes(new HashInfo());
 		}
-		getHashes().setSha512(hashsum);
+		getHashes().setSHA512(hashsum);
 		return self();
 	}
 

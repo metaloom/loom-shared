@@ -10,6 +10,7 @@ import io.metaloom.loom.rest.model.asset.info.AudioInfo;
 import io.metaloom.loom.rest.model.asset.info.ConsistencyInfo;
 import io.metaloom.loom.rest.model.asset.info.DocumentInfo;
 import io.metaloom.loom.rest.model.asset.info.FileInfo;
+import io.metaloom.loom.rest.model.asset.info.FingerprintInfo;
 import io.metaloom.loom.rest.model.asset.info.GeoLocationInfo;
 import io.metaloom.loom.rest.model.asset.info.HashInfo;
 import io.metaloom.loom.rest.model.asset.info.ImageInfo;
@@ -62,6 +63,9 @@ public class AssetResponse extends AbstractCreatorEditorRestResponse<AssetRespon
 
 	@JsonPropertyDescription("A set of different computed hashes for the asset.")
 	private HashInfo hashes;
+
+	@JsonPropertyDescription("Information about the media fingerprints")
+	private FingerprintInfo fingerprint;
 
 	@JsonPropertyDescription("Information about common media properties (e.g. duration, dimension)")
 	private MediaInfo media;
@@ -198,6 +202,17 @@ public class AssetResponse extends AbstractCreatorEditorRestResponse<AssetRespon
 	@Override
 	public AssetResponse setHashes(HashInfo hashes) {
 		this.hashes = hashes;
+		return this;
+	}
+
+	@Override
+	public FingerprintInfo getFingerprint() {
+		return fingerprint;
+	}
+
+	@Override
+	public AssetResponse setFingerprint(FingerprintInfo fingerprint) {
+		this.fingerprint = fingerprint;
 		return this;
 	}
 

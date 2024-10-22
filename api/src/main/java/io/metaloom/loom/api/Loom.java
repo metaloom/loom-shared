@@ -36,7 +36,7 @@ public interface Loom {
 	 * @param code
 	 *            Exit code to return
 	 */
-	public void shutdownAndTerminate(int i);
+	public void shutdownAndTerminate(int code);
 
 	/**
 	 * Shutdown the running instance.

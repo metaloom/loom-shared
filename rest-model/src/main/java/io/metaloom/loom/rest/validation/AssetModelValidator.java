@@ -25,6 +25,6 @@ public interface AssetModelValidator extends ModelValidator {
 
 		// Mandatory hash
 		requireNonNull(request.getHashes(), "Hashes must be set");
-		requireNonNull(request.getHashes().getSha512(), "The SHA512 checksum is required when creating an asset");
+		requireNonNull(request.getHashes().getSHA512(), "The SHA512 checksum is required when creating an asset");
 	}
 }
