@@ -23,7 +23,7 @@ public class TagModelTest implements ModelTestcases {
 	public void testUpdateRequest() {
 		assertModel(tagUpdateRequest(), "TagUpdateRequest");
 	}
-	
+
 	@Test
 	@Override
 	public void testListResponse() {

@@ -1,6 +1,6 @@
 package io.metaloom.loom.api;
 
-import io.metaloom.loom.api.options.LoomOptions;
+import io.metaloom.loom.api.options.LoomOptionsLookup;
 
 public interface LoomFactory {
 
@@ -14,9 +14,9 @@ public interface LoomFactory {
 	/**
 	 * Return a new instance of loom.
 	 * 
-	 * @param options
-	 *            Loom options
+	 * @param optionsLookup
+	 *            Loom options lookup
 	 * @return Loom instance
 	 */
-	Loom create(LoomOptions options);
+	Loom create(LoomOptionsLookup optionsLookup);
 }

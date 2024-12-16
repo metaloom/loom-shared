@@ -1,5 +1,5 @@
 {
-  "uuid" : "f04e89d0-076d-4d90-b192-715a25a2cd59",
+  "uuid" : "0f3332a6-e404-4777-88a9-1fa984a311bc",
   "status" : {
     "creator" : {
       "uuid" : "f04e89d0-076d-4d90-b192-715a25a2cd59",
@@ -15,6 +15,5 @@
   "meta" : {
     "abc" : "cdef"
   },
-  "name" : "GuestPermissions",
-  "permissions" : [ "CREATE_USER" ]
+  "name" : "MyProject"
 }

@@ -1,6 +1,6 @@
 {
-  "name" : "NewGuests",
   "meta" : {
     "abc" : "cdef"
-  }
+  },
+  "title" : "The title"
 }

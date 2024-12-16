@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import io.metaloom.loom.rest.json.Json;
+import io.metaloom.loom.rest.json.LoomJson;
 import io.metaloom.loom.rest.model.RestModel;
 
 public abstract class AbstractModelTest implements ModelTestcases  {
@@ -25,7 +25,7 @@ public abstract class AbstractModelTest implements ModelTestcases  {
 	public <T extends RestModel> T load(String modelName, Class<T> classOfT) {
 		String body = load(modelName);
 		System.out.println(body);
-		return Json.parse(body, classOfT);
+		return LoomJson.parse(body, classOfT);
 	}
 
 }

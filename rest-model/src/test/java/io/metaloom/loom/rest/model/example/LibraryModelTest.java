@@ -4,30 +4,30 @@ import static io.metaloom.loom.rest.model.example.ModelTestHelper.assertModel;
 
 import org.junit.jupiter.api.Test;
 
-public class NamespaceModelTest implements ModelTestcases {
+public class LibraryModelTest implements ModelTestcases {
 
 	@Test
 	@Override
 	public void testResponse() {
-		assertModel(libraryResponse(), "NamespaceResponse");
+		assertModel(libraryResponse(), "LibraryResponse");
 	}
 
 	@Test
 	@Override
 	public void testCreateRequest() {
-		assertModel(libraryCreateRequest(), "NamespaceCreateRequest");
+		assertModel(libraryCreateRequest(), "LibraryCreateRequest");
 	}
 
 	@Test
 	@Override
 	public void testUpdateRequest() {
-		assertModel(libraryUpdateRequest(), "NamespaceUpdateRequest");
+		assertModel(libraryUpdateRequest(), "LibraryUpdateRequest");
 	}
 
 	@Test
 	@Override
 	public void testListResponse() {
-		assertModel(libraryListResponse(), "NamespaceListResponse");
+		assertModel(libraryListResponse(), "LibraryListResponse");
 	}
 
 	@Override

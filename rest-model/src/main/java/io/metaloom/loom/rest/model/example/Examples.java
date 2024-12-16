@@ -4,6 +4,7 @@ import io.metaloom.loom.rest.model.annotation.AnnotationExamples;
 import io.metaloom.loom.rest.model.asset.AssetExamples;
 import io.metaloom.loom.rest.model.asset.location.AssetLocationExamples;
 import io.metaloom.loom.rest.model.attachment.AttachmentExamples;
+import io.metaloom.loom.rest.model.auth.AuthLoginExamples;
 import io.metaloom.loom.rest.model.cluster.ClusterExamples;
 import io.metaloom.loom.rest.model.collection.CollectionExamples;
 import io.metaloom.loom.rest.model.comment.CommentExamples;
@@ -23,6 +24,7 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 
 public interface Examples extends
 	AnnotationExamples,
+	AuthLoginExamples,
 	AssetExamples,
 	AssetLocationExamples,
 	AttachmentExamples,

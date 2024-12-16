@@ -1,6 +1,6 @@
 package io.metaloom.loom.api;
 
-import io.metaloom.loom.api.options.LoomOptions;
+import io.metaloom.loom.api.options.LoomOptionsLookup;
 import io.vertx.core.ServiceHelper;
 
 public interface Loom {
@@ -10,13 +10,13 @@ public interface Loom {
 	/**
 	 * Returns the initialized instance.
 	 * 
-	 * @param options
+	 * @param optionsLookup
 	 * 
 	 * @return Fluent API
 	 */
-	public static Loom create(LoomOptions options) {
-		options.validate();
-		return factory.create(options);
+	public static Loom create(LoomOptionsLookup optionsLookup) {
+		optionsLookup.options().validate();
+		return factory.create(optionsLookup);
 	}
 
 	/**

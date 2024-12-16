@@ -1,10 +1,11 @@
 package io.metaloom.loom.rest.model.example;
 
+import io.metaloom.loom.rest.model.RestModel;
 import io.netty.handler.codec.http.HttpResponseStatus;
 
 public interface Example {
 
-	Object body();
+	RestModel body();
 
 	String description();
 

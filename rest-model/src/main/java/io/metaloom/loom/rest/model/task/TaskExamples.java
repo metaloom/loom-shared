@@ -47,6 +47,7 @@ public interface TaskExamples extends ExampleValues {
 
 	default TaskListResponse taskListResponse() {
 		TaskListResponse model = new TaskListResponse();
+		model.add(taskResponse());
 		model.setMetainfo(pagingInfo());
 		return model;
 	}

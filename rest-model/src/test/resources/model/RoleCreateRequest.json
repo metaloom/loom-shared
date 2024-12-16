@@ -1,7 +1,7 @@
 {
   "name" : "GuestPermissions",
   "meta" : {
-    "custom" : "value"
+    "abc" : "cdef"
   },
   "permissions" : [ "CREATE_USER" ]
 }

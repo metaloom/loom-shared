@@ -11,12 +11,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import io.metaloom.loom.rest.json.deserializer.HashDeserializer;
 import io.metaloom.loom.rest.json.deserializer.JsonArrayDeserializer;
 import io.metaloom.loom.rest.json.deserializer.JsonObjectDeserializer;
+import io.metaloom.loom.rest.json.serializer.HashSerializer;
 import io.metaloom.loom.rest.json.serializer.JsonArraySerializer;
 import io.metaloom.loom.rest.json.serializer.JsonObjectSerializer;
 import io.metaloom.loom.rest.model.RestModel;
 import io.metaloom.loom.rest.model.RestResponseModel;
+import io.metaloom.utils.hash.AbstractStringHash;
 import io.netty.buffer.ByteBufInputStream;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;
@@ -25,7 +28,7 @@ import io.vertx.core.json.JsonObject;
 /**
  * Helper which manages JSON handling.
  */
-public final class Json {
+public final class LoomJson {
 
 	private static final String PARSE_ERROR = "Error while parsing model to JSON.";
 
@@ -35,16 +38,20 @@ public final class Json {
 		mapper = new ObjectMapper()
 			.setSerializationInclusion(Include.NON_NULL);
 		SimpleModule module = new SimpleModule();
+		// JSON
 		module.addSerializer(JsonObject.class, new JsonObjectSerializer());
 		module.addSerializer(JsonArray.class, new JsonArraySerializer());
 		module.addDeserializer(JsonObject.class, new JsonObjectDeserializer());
 		module.addDeserializer(JsonArray.class, new JsonArrayDeserializer());
+		// Hashes
+		module.addSerializer(AbstractStringHash.class, new HashSerializer());
+		module.addDeserializer(AbstractStringHash.class, new HashDeserializer());
 		mapper.registerModule(new JavaTimeModule());
 		mapper.setTimeZone(TimeZone.getTimeZone("UTC"));
 		mapper.registerModule(module);
 	}
 
-	private Json() {
+	private LoomJson() {
 	}
 
 	public static JsonNode toJson(String content) throws JsonProcessingException {
@@ -55,7 +62,7 @@ public final class Json {
 		return json;
 	}
 
-	public static String parse(RestModel model) {
+	public static String encode(RestModel model) {
 		try {
 			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(model);
 		} catch (JsonProcessingException e) {
@@ -63,7 +70,7 @@ public final class Json {
 		}
 	}
 
-	public static String parseCompact(RestModel model) {
+	public static String encodeCompact(RestModel model) {
 		try {
 			return mapper.writeValueAsString(model);
 		} catch (JsonProcessingException e) {

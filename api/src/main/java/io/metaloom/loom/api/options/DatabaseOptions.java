@@ -1,5 +1,7 @@
 package io.metaloom.loom.api.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class DatabaseOptions implements Option {
 
 	public static final String DEFAULT_HOST = "127.0.0.1";
@@ -79,6 +81,7 @@ public class DatabaseOptions implements Option {
 		return this;
 	}
 
+	@JsonIgnore
 	public String getJdbcUrl() {
 		return "jdbc:postgresql://" + getHost() + ":" + getPort() + "/" + getDatabaseName();
 	}

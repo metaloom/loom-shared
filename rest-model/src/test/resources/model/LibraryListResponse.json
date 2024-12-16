@@ -1,6 +1,6 @@
 {
   "data" : [ {
-    "uuid" : "86abc160-4da2-4951-a91f-da0c33fbc634",
+    "uuid" : "0f3332a6-e404-4777-88a9-1fa984a311bc",
     "status" : {
       "creator" : {
         "uuid" : "f04e89d0-076d-4d90-b192-715a25a2cd59",
@@ -16,19 +16,9 @@
     "meta" : {
       "abc" : "cdef"
     },
-    "name" : "red",
-    "area" : {
-      "from" : 12,
-      "to" : 42,
-      "width" : 480,
-      "height" : 200,
-      "startX" : 120,
-      "startY" : 240
-    },
-    "color" : "1681de",
-    "collection" : "colors"
+    "name" : "MyProject"
   }, {
-    "uuid" : "86abc160-4da2-4951-a91f-da0c33fbc634",
+    "uuid" : "0f3332a6-e404-4777-88a9-1fa984a311bc",
     "status" : {
       "creator" : {
         "uuid" : "f04e89d0-076d-4d90-b192-715a25a2cd59",
@@ -44,17 +34,7 @@
     "meta" : {
       "abc" : "cdef"
     },
-    "name" : "red",
-    "area" : {
-      "from" : 12,
-      "to" : 42,
-      "width" : 480,
-      "height" : 200,
-      "startX" : 120,
-      "startY" : 240
-    },
-    "color" : "1681de",
-    "collection" : "colors"
+    "name" : "MyProject"
   } ],
   "_metainfo" : {
     "perPage" : 2,

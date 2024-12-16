@@ -11,7 +11,7 @@ import io.vertx.core.json.JsonArray;
 public class JsonArraySerializer extends JsonSerializer<JsonArray> {
 
 	@Override
-	public void serialize(JsonArray value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
-		jgen.writeObject(value.getList());
+	public void serialize(JsonArray value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+		gen.writeObject(value.getList());
 	}
 }

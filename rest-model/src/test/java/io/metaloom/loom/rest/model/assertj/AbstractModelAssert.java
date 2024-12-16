@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.assertj.core.api.AbstractAssert;
 
-import io.metaloom.loom.rest.json.Json;
+import io.metaloom.loom.rest.json.LoomJson;
 import io.metaloom.loom.rest.model.RestModel;
 import io.vertx.core.json.JsonObject;
 
@@ -25,6 +25,6 @@ public abstract class AbstractModelAssert<U extends AbstractAssert<U, T>, T> ext
 	}
 
 	protected void assertJson(RestModel modelA, RestModel modelB, String msg) {
-		assertEquals(Json.parse(modelA), Json.parse(modelB), msg);
+		assertEquals(LoomJson.encode(modelA), LoomJson.encode(modelB), msg);
 	}
 }

@@ -17,7 +17,7 @@ public class ExampleImpl implements Example {
 	}
 
 	@Override
-	public Object body() {
+	public RestModel body() {
 		return body;
 	}
 

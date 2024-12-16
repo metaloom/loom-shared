@@ -2,6 +2,6 @@
   "name" : "red",
   "collection" : "colors",
   "meta" : {
-    "custom" : "value"
+    "abc" : "cdef"
   }
 }
