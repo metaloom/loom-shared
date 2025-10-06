@@ -20,8 +20,10 @@ import io.metaloom.loom.rest.json.serializer.JsonObjectSerializer;
 import io.metaloom.loom.rest.model.RestModel;
 import io.metaloom.loom.rest.model.RestResponseModel;
 import io.metaloom.utils.hash.AbstractStringHash;
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;
 import io.vertx.core.buffer.Buffer;
+import io.vertx.core.internal.buffer.BufferInternal;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
@@ -87,7 +89,8 @@ public final class LoomJson {
 	}
 
 	public static <T extends RestModel> T parse(Buffer buffer, Class<T> modelClass) {
-		try (InputStream ins = new ByteBufInputStream(buffer.getByteBuf())) {
+		ByteBuf bb = ((BufferInternal)buffer).getByteBuf();
+		try (InputStream ins = new ByteBufInputStream(bb)) {
 			return mapper.readValue(ins, modelClass);
 		} catch (Exception e) {
 			throw new RuntimeException(PARSE_ERROR, e);

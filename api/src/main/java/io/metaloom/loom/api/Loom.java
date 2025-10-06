@@ -1,7 +1,7 @@
 package io.metaloom.loom.api;
 
 import io.metaloom.loom.api.options.LoomOptionsLookup;
-import io.vertx.core.ServiceHelper;
+import io.vertx.core.impl.ServiceHelper;
 
 public interface Loom {
 
